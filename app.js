@@ -19,16 +19,19 @@ app.post('/smart', function (req, res, next) {
     var userText = req.body.text;
     var output;
 
+  if(userText.includes("@smart")){
     if (userText == "why slack") {
         output = "1. knowledge management: uploading and searching of files (+ connection to external sources), code snippets, videos and more \n" +
-		"2. communication management: multiple channeles / workspaces, external messengers integration";
+      "2. communication management: multiple channeles / workspaces, external messengers integration";
     } else {
         output = userText;
     };
+      var botPayload = {
+      text: output
+  };
 
-    var botPayload = {
-        text: output
-    };
+}
+
 
   // Loop otherwise..
   if (userName !== 'slackbot') {
