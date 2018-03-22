@@ -10,6 +10,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // test route
 app.get('/', function (req, res) { res.status(200).send('server is up and rinning'); });
  
+app.listen(port, function () {
+  console.log('Listening on port ' + port);
+});
+
 app.post('/smart', function (req, res, next) {
     var userName = req.body.user_name;
     var userText = req.body.text;
