@@ -18,9 +18,17 @@ app.listen(port, function () {
 app.post('/hello', function (req, res, next) {
     var userName = req.body.user_name;
     var userText = req.body.text;
-  var botPayload = {
-      text: userText
-  };
+    var output; 
+    if (userText == "why slack") {
+        output = "1. knowledge management: uploading and searching of files (+ connection to external sources), code snippets, videos and more \n" +
+		"2. communication management: multiple channeles / workspaces, external messengers integration";
+    } else {
+        output = userText;
+    };
+
+    var botPayload = {
+        text: output
+    };
   // Loop otherwise..
   if (userName !== 'slackbot') {
     return res.status(200).json(botPayload);
