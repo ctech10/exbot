@@ -14,10 +14,12 @@ app.listen(port, function () {
   console.log('Listening on port ' + port);
 });
 
+
 app.post('/hello', function (req, res, next) {
-  var userName = req.body.user_name;
+    var userName = req.body.user_name;
+    var userText = req.body.text;
   var botPayload = {
-    text : 'Hello ' + userName + ', welcome to Devdactic Slack channel! I\'ll be your guide.'
+      text: userText
   };
   // Loop otherwise..
   if (userName !== 'slackbot') {
@@ -26,3 +28,4 @@ app.post('/hello', function (req, res, next) {
     return res.status(200).end();
   }
 });
+
