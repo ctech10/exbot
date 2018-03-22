@@ -25,7 +25,15 @@ app.post('/smart', function (req, res, next) {
         output = "1. knowledge management: uploading and searching of files (+ connection to external sources), code snippets, videos and more \n" +
       "2. communication management: multiple channeles / workspaces, external messengers integration";
     } else {
-        output = userText.replace("@smart:", "");
+
+        if(userText.includes(":")) {
+             output = userText.replace("@smart:", "");
+          } else {
+              output = userText.replace("@smart", "");
+          }
+         
+        }
+      }
     };
 
       var botPayload = {
