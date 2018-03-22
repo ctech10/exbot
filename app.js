@@ -21,13 +21,12 @@ app.post('/smart', function (req, res, next) {
 
   if(userText.includes("@smart")){
 
-     userText.replace("@smart", "");
-     userText.replace(":", "");
-
     if (userText.includes("why slack")) {
         output = "1. knowledge management: uploading and searching of files (+ connection to external sources), code snippets, videos and more \n" +
       "2. communication management: multiple channeles / workspaces, external messengers integration";
     } else {
+        userText.replace("@smart", "");
+        userText.replace(":", "");
         output = userText;
     };
       var botPayload = {
