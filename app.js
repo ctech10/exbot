@@ -25,16 +25,13 @@ app.post('/smart', function (req, res, next) {
         output = "1. knowledge management: uploading and searching of files (+ connection to external sources), code snippets, videos and more \n" +
       "2. communication management: multiple channeles / workspaces, external messengers integration";
     } else {
-        userText.replace("@smart", "");
-        userText.replace(":", "");
-        output = userText;
+        output = userText.replace("@smart:", "");
     };
+
       var botPayload = {
-      text: output
-  };
-
-}
-
+        text: output
+      };
+  }
 
   // Loop otherwise..
   if (userName !== 'slackbot') {
