@@ -15,7 +15,7 @@ app.listen(port, function () {
 });
 
 
-app.post('/hello', function (req, res, next) {
+app.post('/smart', function (req, res, next) {
     var userName = req.body.user_name;
     var userText = req.body.text;
     var output; 

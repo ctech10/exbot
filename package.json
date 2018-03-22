@@ -1,14 +1,14 @@
 {
-  "name": "bot",
+  "name": "smart",
   "version": "1.0.0",
-  "description": "This example is so cool.",
+  "description": "Smart and simple bot example.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
      "start": "node app.js"
 
   },
-  "author": "nastia",
+  "author": "Nastia",
   "license": "MIT",
   "dependencies": {
     "express": "^4.x.x",
