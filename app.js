@@ -26,15 +26,13 @@ app.post('/smart', function (req, res, next) {
       "2. communication management: multiple channeles / workspaces, external messengers integration";
     } else {
 
-        if(userText.includes(":")) {
-             output = userText.replace("@smart:", "");
-          } else {
-              output = userText.replace("@smart", "");
-          }
-         
+      if(userText.includes(":")) {
+           output = userText.replace("@smart:", "");
+        } else {
+            output = userText.replace("@smart", "");
         }
+         
       }
-    };
 
       var botPayload = {
         text: output
